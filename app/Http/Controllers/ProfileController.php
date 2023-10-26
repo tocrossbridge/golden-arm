@@ -57,4 +57,12 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function donations(Request $request): View
+    {
+        return view('profile.donations.index', [
+            'user' => $request->user(),
+        ]);
+    }
+
 }
