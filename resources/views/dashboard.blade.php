@@ -62,4 +62,41 @@
             </div>
         </div>
     </div>
+
+        <script>
+            function alerta () {
+                alert("Doação agendada com sucesso!");
+            };
+
+
+            function obterLocalizacao () {
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(exibirLocalizacao);
+                } else {
+                    alert("Geolocalização não suportada pelo navegador.");
+                }
+            }
+
+            function exibirLocalizacao (posicao) {
+                var latitude = posicao.coords.latitude;
+                var longitude = posicao.coords.longitude;
+
+                var url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+                //url que acessa a api
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        var endereco = data.display_name;
+
+                        // Preenche o valor do input com o endereço
+                        document.getElementById("localInput").value = endereco;
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert("Erro ao processar a requisição.");
+                    });
+            }
+        </script>
 </x-app-layout>
