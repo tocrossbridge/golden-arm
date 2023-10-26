@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Doe de Sangue</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -45,7 +45,7 @@
                                 <a class="nav-link" href="/login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/cadastrar">Cadastre-se</a>
+                                <a class="nav-link" href="/register">Cadastre-se</a>
                             </li>
                     </div>
                 </div>
